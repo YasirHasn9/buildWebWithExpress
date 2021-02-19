@@ -8,10 +8,11 @@ const path = require('path');
 
 const port = 3000;
 
+app.set('view engine', 'ejs');
+app.set('vies', path.join(__dirname, './views'));
+
 app.get('/', (req, res) => {
-  // 2. send file on the res
-  // grab from the res object a method called sendFile
-  res.sendFile(path.join(__dirname, './static/index.html'));
+  res.render('pages/index', { pageTitle: 'Welcome' });
 });
 
 app.listen(port, () => {

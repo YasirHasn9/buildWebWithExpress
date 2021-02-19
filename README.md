@@ -49,6 +49,7 @@ in the terminal run `npx eslint --init` this will run the script that provided b
 - It is pretty tedious to load express every time we make a change.
   There is tool can make it easier to us called `nodemon` run `npm install -D nodemon`
   will run express for us on every change by going to `package.json`
+
   ```js
   "scripts":{
       "start":"node server.js",
@@ -56,4 +57,8 @@ in the terminal run `npx eslint --init` this will run the script that provided b
       "dev":"nodemon sever.js"
   }
   ```
+
   this will do the trick for us
+
+- install `ejs` to enable us to read html files by switched its file extensions from `index.html` to `index.ejs`
+  (ejs)[https://ejs.co/]
