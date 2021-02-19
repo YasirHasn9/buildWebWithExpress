@@ -62,3 +62,20 @@ in the terminal run `npx eslint --init` this will run the script that provided b
 
 - install `ejs` to enable us to read html files by switched its file extensions from `index.html` to `index.ejs`
   [ejs](https://ejs.co/)
+
+## Middlewares
+
+They are key concepts in express and almost everything build around them.
+
+- Syntax
+
+```js
+router.use(callback)
+router.use(path, callback)
+router.[get | post | delete | update | put](path,callback)
+```
+
+- they can execute any code
+- they can change and manipulate the request-response object
+- they can stop the request-response cycle
+- they can call the next middleware in the stack
