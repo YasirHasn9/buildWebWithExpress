@@ -61,4 +61,4 @@ in the terminal run `npx eslint --init` this will run the script that provided b
   this will do the trick for us
 
 - install `ejs` to enable us to read html files by switched its file extensions from `index.html` to `index.ejs`
-  (ejs)[https://ejs.co/]
+  [ejs](https://ejs.co/)
