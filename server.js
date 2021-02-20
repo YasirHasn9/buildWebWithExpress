@@ -8,12 +8,15 @@ const path = require('path');
 
 const port = 3000;
 
+const router = require('./routers/index');
+
 app.set('view engine', 'ejs');
 app.set('vies', path.join(__dirname, './views'));
 
-app.get('/', (req, res) => {
-  res.render('pages/index', { pageTitle: 'Welcome' });
-});
+// app.get('/', (req, res) => {
+//   res.render('pages/index', { pageTitle: 'Welcome' });
+// });
+app.use('/', router());
 
 app.listen(port, () => {
   console.log(`https//:localhost${port}`);
