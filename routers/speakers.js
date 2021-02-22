@@ -2,8 +2,13 @@ const express = require('express');
 
 const router = express.Router();
 
-module.exports = () => {
-  router.get('/', (req, res) => res.send('<h1>Speaker List </h1>'));
+module.exports = (params) => {
+  const data = params.fetchingSpeakersData;
+  router.get('/', async (req, res) => {
+    const speakers = await data.getData();
+
+    return res.json(speakers);
+  });
 
   router.get('/:shortname', (req, res) => {
     const { shortname } = req.params;

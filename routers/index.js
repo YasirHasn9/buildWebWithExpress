@@ -9,16 +9,16 @@ const router = express.Router();
 const speakerRouter = require('./speakers');
 const feedbackRouter = require('./feedback');
 
-module.exports = () => {
+module.exports = (params) => {
   router.get('/', (req, res) => {
     res.render('pages/index', { pageTitle: 'Welcome' });
   });
 
-  router.use('/speaker', speakerRouter());
+  router.use('/speakers', speakerRouter(params));
   router.use('/feedback', feedbackRouter());
 
   return router;
 };
 
-// while using this is fine but by choosing the previous
+// while using this is fine but by choosing the previous, we can add some parameters
 // module.export = router;
