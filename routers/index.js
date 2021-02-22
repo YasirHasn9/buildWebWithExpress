@@ -2,11 +2,20 @@
 const express = require('express');
 
 const router = express.Router();
+// we can get our sever.js messy by import every router into it
+// and its gonna work perfectly, but one of the reason to make our modular is
+// organize our code by separating our code.
+
+const speakerRouter = require('./speakers');
+const feedbackRouter = require('./feedback');
 
 module.exports = () => {
   router.get('/', (req, res) => {
     res.render('pages/index', { pageTitle: 'Welcome' });
   });
+
+  router.use('/speaker', speakerRouter());
+  router.use('/feedback', feedbackRouter());
 
   return router;
 };
