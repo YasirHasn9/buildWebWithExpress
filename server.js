@@ -5,8 +5,10 @@ const path = require('path');
 
 // fetch speaker data , then create an instance of it with path
 const FetchingSpeakersData = require('./services/speakers');
+const FeedbackService = require('./services/feedback');
 
 const fetchingSpeakersData = new FetchingSpeakersData('./data/speakers.json');
+const feedbackService = new FeedbackService('./data/feedback.json');
 
 const app = express();
 const port = 3000;
@@ -20,6 +22,7 @@ app.use(
   '/',
   router({
     fetchingSpeakersData,
+    feedbackService,
   })
 );
 
