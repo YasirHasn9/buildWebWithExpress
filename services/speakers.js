@@ -21,6 +21,11 @@ class FetchingSpeakersData {
 
     return JSON.parse(data);
   }
+
+  async getList() {
+    const data = await this.getData();
+    return data;
+  }
 }
 
 module.exports = FetchingSpeakersData;
